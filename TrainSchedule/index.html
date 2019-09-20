@@ -4,43 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src ='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src ='https://www.gstatic.com/firebasejs/live/3.0/firebase.js'></script>
-    <!--<script src = 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js'></script>-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="./Assets/style.css"></link>
-    
-    
-    <title>Train Schedule</title>
-    <!--
-        TTD
-`           > Name Trains in array
-            > Make title jumbotron   
-            > make table of 
-            Current Train Schedule
-                Train Name
-                Destination
-                Freqency (min)
-                Next Arrival
-                Minutes Away
-            > make table to add trains
-                Train name
-                input text
-                destination
-                input text
-                first train time
-                input text
-                frequency
-                input text
-                SUBMIT BUTTON   
-    -->
+    <title>Trains Instead</title>
+    <link rel="stylesheet" href="./Assets/style.css">
+
+  <!-- Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 </head>
 <body>
     <div class="container">
+        <div class="row black" id="head">
+            <div class="col-md-12 black">
+                <h1>Train Schedule</h1>
+            </div>
+            <div class="col-md-12 black">
+                <h2>Trains and their ilk</h2>
+            </div>
+        </div>
+        <div class="row" id="blankspace">
+            <div class="col-md-12 blank">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row" id="train-info">
+            <div class="col-md-12 grey" id="title">
+                <p>Train Schedule</p>
+            </div>
+            <div class="col-md-2" id="em-name">
+                <p>Train Name</p>
+            </div>
+            <div class="col-md-2" id="em-rate">
+                <p>Destination</p>
+            </div>
+            <div class="col-md-2" id="em-start">
+                <p>Frequency</p>
+            </div>
+            <div class="col-md-2" id="em-worked">
+                <p>Arrival</p>
+            </div>
+            <div class="col-md-2" id="em-monthly">
+                <p>Departure</p>
+            </div>
+            <div class="col-md-2" id="em-total">
+                <p>Now</p>
+            </div>
+        </div>
+        <div class="row" id="blankspace">
+            <div class="col-md-12 blank">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row" id="submit">
+            <div class="col-md-12 grey" id="entry-title">
+                <p>Add Train</p>
+            </div>
+            <div class="col-md-12" id="entry-name-title">
+                <p>Train Name</p>
+            </div>
+            <div class="col-md-12" id="entry-name">
+                <input type="text" id="user-entry-name" value="Magic Train">
+            </div>
+            <div class="col-md-12" id="entry-rate-title">
+                <p>Destination</p>
+            </div>
+            <div class="col-md-12" id="entry-rate">
+                <input type="text" id='user-entry-rate' value="New York">
+            </div>
+            <div class="col-md-12" id="entry-start-title">
+                <p>Frequency</p>
+            </div>
+            <div class="col-md-12" id="entry-start">
+                <input type='text' id='user-entry-start' value="45min"></input>
+            </div>
+            <div class="col-md-12" id="entry-monthly-title">
+                <p>Ticket Price</p>
+            </div>
+            <div class="col-md-12" id="user-entry-monthy">
+                <input type="text" id="user-entry-monthly" value="50">
+            </div>
 
+        </div>
+        <div class="row" id="blankspace">
+            <div class="col-md-12 blank">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row" id="submit">
+            <div class="col-md-2">
+                <input type="submit" class="submit-button" id="submit-button"></input>
+            </div>
+        </div>
     </div>
-    <script src="Assets/app.js"></script>   
+      <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+  <script src="./Assets/app.js"></script>
+
 </body>
 </html>

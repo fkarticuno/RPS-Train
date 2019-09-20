@@ -1,5 +1,21 @@
-div {
-    border: 2px solid black;
-    height:10px;
 
+div {
+    background-color: whitesmoke;
+
+}
+input {
+    width: 100%;
+}
+.black {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+.grey {
+    background-color: lightslategrey;
+}
+.blank {
+    background-color: white;
+    
 }

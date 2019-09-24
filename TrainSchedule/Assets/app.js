@@ -20,7 +20,6 @@
                 input text
                 SUBMIT BUTTON   
 */
-/*
 var trains = [];
 
 trains.push('Lambtrak',
@@ -97,7 +96,7 @@ function MainDisplay() {
     }
 }
 MainDisplay();
-*/
+
 
 ///
 
@@ -120,7 +119,7 @@ var name = 0;
 var rate = 0;
 var date = 0;
 var monthly = 0;
-
+var now = 0;
 //database.ref().on('value',function(snapshot){
     //  On DB change
 //});
@@ -134,7 +133,7 @@ $('.submit-button').on('click',function() {
     rate = $('#user-entry-rate').val();
     date = $('#user-entry-start').val();
     monthly = $('#user-entry-monthly').val();
-
+    now = moment().format('MMMM Do YYYY, h:mm:ss a')
     alert(`Train: ${name} submitted.`);
 // Push new values to 'table'
     function mkp(value){
@@ -142,11 +141,11 @@ $('.submit-button').on('click',function() {
     }
     $('#em-name').append(mkp(name));
     $('#em-rate').append(mkp(rate));
-    $('#em-start').append(mkp(date));
-    $('#em-worked').append(mkp(5));
+    $('#em-start').append(mkp(moment(now, "MMMM Do YYYY, h:mm:ss a").fromNow()));
+    $('#em-worked').append(mkp(moment(now, "MMMM Do YYYY, h:mm:ss a").subtract(date,"MMMM Do YYYY, h:mm:ss a")));
     $('#em-monthly').append(mkp(monthly));
     $('#em-total').append(mkp(monthly*5));
-
+    $('#em-now').append(mkp(now));
     database.ref().push({
         user:{
             name:name,
